@@ -5,12 +5,25 @@ import datetime as dt
 import os
 
 # %%
+'''
+holidaylist = ['25-12-2023','27-11-2023','14-11-2023',
+               '24-10-2023','02-10-2023','19-09-2023',
+               '15-08-2023','28-06-2023','22-04-2023',
+               '01-05-2023','14-04-2023','07-04-2023',
+               '04-04-2023','30-03-2023','07-03-2023','26-01-2023',]
+'''
+
+# %%
+#print(len(holidaylist))
+
+# %%
 ct = dt.datetime.today()
 day= ct.strftime("%d") 
 day=str(int(day)-2) #today is sunday
 month= ct.strftime("%b").upper()
 year= ct.strftime("%Y")
 day,month,year
+file_name = f"C:\\Users\\Ryzen\\python\\StockTracker\\bhavcopy\\downloads\\cm{day}{month}{year}bhav.csv.zip"
 
 # %%
 '''
@@ -23,6 +36,7 @@ day= 19 # DD format
 url= f'https://archives.nseindia.com/content/historical/EQUITIES/{year}/{month}/cm{day}{month}{year}bhav.csv.zip'
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
 response = requests.get(url, headers=headers)
+
 
 # %%
 def downloadfile():
