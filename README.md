@@ -1,0 +1,2 @@
+#bhavcopy downloader
+from nse 
